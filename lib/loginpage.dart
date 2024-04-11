@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:landing_page_ui_setstate/homescreen.dart';
 import 'package:landing_page_ui_setstate/signuppage.dart';
 import 'package:landing_page_ui_setstate/widgets/login_signup_background.dart';
 import 'package:landing_page_ui_setstate/widgets/widgets.dart';
@@ -62,7 +63,7 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                         child: Text(
                           'Must be 8 or more characters.',
-                          style: bodyText(),
+                          style: bodyLargeText(),
                         ),
                       ),
                     ],
@@ -80,12 +81,12 @@ class _LoginpageState extends State<Loginpage> {
                       style: myElevatedButtonStyle(),
                       onPressed: () => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => const Loginpage(),
+                          builder: (context) => HomeScreen(),
                         ),
                       ),
                       child: Text(
                         'Log In',
-                        style: bodyText(textcolor: Colors.white),
+                        style: bodyLargeText(textcolor: Colors.white),
                       ),
                     ),
                   ),
@@ -97,7 +98,7 @@ class _LoginpageState extends State<Loginpage> {
                     children: [
                       Text(
                         'Don\'t have an account',
-                        style: bodyText(textcolor: Colors.black87),
+                        style: bodyLargeText(textcolor: Colors.black87),
                       ),
                       TextButton(
                         onPressed: () => Navigator.of(context).pushReplacement(
@@ -107,7 +108,7 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                         child: Text(
                           'Sign Up',
-                          style: bodyText(textcolor: Colors.black87),
+                          style: bodyLargeText(textcolor: Colors.black87),
                         ),
                       ),
                     ],

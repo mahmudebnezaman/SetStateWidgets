@@ -16,7 +16,7 @@ Widget customTextfeild({
         ),
         child: Text(
           labelText,
-          style: bodyText(),
+          style: bodyLargeText(),
         ),
       ),
       TextField(
@@ -54,11 +54,36 @@ Widget customTextfeild({
   );
 }
 
-TextStyle bodyText({Color textcolor = Colors.black54}) {
+TextStyle bodyLargeText({Color textcolor = Colors.black54, fontStyle = FontStyle.normal}) {
   return TextStyle(
     color: textcolor,
-    fontSize: 20,
+    fontSize: 18,
+    fontStyle: fontStyle,
+  );
+}
+
+TextStyle bodySmallText({Color textcolor = Colors.black54}) {
+  return TextStyle(
+    color: textcolor,
+    fontSize: 12,
     fontStyle: FontStyle.normal,
+  );
+
+}TextStyle bodyText({Color textcolor = Colors.black54, fontStyle = FontStyle.normal, fontWeight = FontWeight.normal}) {
+  return TextStyle(
+    color: textcolor,
+    fontSize: 14,
+    fontStyle: fontStyle,
+    fontWeight: fontWeight,
+  );
+}
+
+TextStyle bodyHeaderText({Color textcolor = Colors.black}) {
+  return TextStyle(
+    color: textcolor,
+    fontSize: 18,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.bold,
   );
 }
 

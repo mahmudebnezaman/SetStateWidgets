@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page_ui_setstate/homepage.dart';
+import 'package:landing_page_ui_setstate/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'News Room'),
+      home: const SplashScreen(title: 'News Room'),
     );
   }
 }

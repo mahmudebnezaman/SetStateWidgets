@@ -3,16 +3,16 @@ import 'package:landing_page_ui_setstate/loginpage.dart';
 import 'package:landing_page_ui_setstate/signuppage.dart';
 import 'package:landing_page_ui_setstate/widgets/widgets.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +24,9 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
             decoration: const BoxDecoration(
               color: Colors.amberAccent,
-              borderRadius: BorderRadius.all(
-                Radius.circular(36.0),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(36.0),
+                bottomRight: Radius.circular(36.0),
               ),
             ),
             child: Column(
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Text(
                   'Your digital portal to the world!!',
-                  style: bodyText(),
+                  style: bodyLargeText(),
                 ),
                 const SizedBox(
                   height: 10,
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Text(
                     'Anytime Anywhere',
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Image.asset(
             'assets/images/news.png',
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery.of(context).size.height * 0.2,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     child: Text(
                       'Log In',
-                      style: bodyText(textcolor: Colors.white),
+                      style: bodyLargeText(textcolor: Colors.white),
                     ),
                   ),
                 ),
@@ -109,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     child: Text(
                       'Sign Up',
-                      style: bodyText(textcolor: Colors.black87),
+                      style: bodyLargeText(textcolor: Colors.black87),
                     ),
                   ),
                 ),

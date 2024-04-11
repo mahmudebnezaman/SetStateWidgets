@@ -10,8 +10,9 @@ Widget loginSignupBackground({required BuildContext context, required String tit
         width: double.infinity,
         decoration: BoxDecoration(
           color: title == 'Log In' ? Colors.greenAccent : Colors.lightBlueAccent,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(36.0),
+          borderRadius: const BorderRadius.only(
+            bottomRight: Radius.circular(36.0),
+            bottomLeft: Radius.circular(36.0),
           ),
         ),
         child: Column(
@@ -23,7 +24,7 @@ Widget loginSignupBackground({required BuildContext context, required String tit
              Text(
               title,
               style: const TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
               ),
@@ -68,7 +69,7 @@ Widget loginSignupBackground({required BuildContext context, required String tit
             ),
             Text(
               'or',
-              style: bodyText(),
+              style: bodyLargeText(),
               // textAlign: TextAlign.center,
             ),
           ],
