@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:landing_page_ui_setstate/trendingpage.dart';
+import 'package:landing_page_ui_setstate/widgets/newscard.dart';
 import 'package:landing_page_ui_setstate/widgets/widgets.dart';
+
+import 'article.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -20,10 +24,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(
+                  height: 2,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -74,9 +81,14 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Image.asset(
-                      'assets/images/search.png',
-                      height: 30,
+                    Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          'assets/images/search.png',
+                          height: 25,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -88,8 +100,7 @@ class HomeScreen extends StatelessWidget {
                   // width: 100,
                   child: ListView.builder(
                     // shrinkWrap: true,
-                    physics: BouncingScrollPhysics(),
-
+                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.all(8),
                     itemCount: newsCategories.length,
@@ -107,11 +118,11 @@ class HomeScreen extends StatelessWidget {
                             BoxShadow(
                               color: Colors.black26,
                               offset: Offset(
-                                5.0,
-                                5.0,
+                                0.0,
+                                2.0,
                               ),
-                              blurRadius: 10.0,
-                              spreadRadius: 2.0,
+                              blurRadius: 0.5,
+                              spreadRadius: 0.5,
                             ),
                           ],
                         ),
@@ -130,10 +141,159 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                Image.asset('assets/images/user.jpg'),
-                Image.asset('assets/images/user.jpg'),
-                Image.asset('assets/images/user.jpg'),
-                Image.asset('assets/images/user.jpg'),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    // padding: const EdgeInsets.all(8),
+                    itemCount: newsCategories.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return NewsCard(context);
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Recommended ',
+                          style: bodyHeaderText(),
+                        ),
+                        Image.asset(
+                          'assets/images/star.png',
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const TrendingPage(),
+                        ),
+                      ),
+                      child: Text(
+                        'View all',
+                        style: bodySmallText(),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    // padding: const EdgeInsets.all(8),
+                    itemCount: newsCategories.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return RecommendedCard(context);
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Trending ',
+                          style: bodyHeaderText(),
+                        ),
+                        Image.asset(
+                          'assets/images/trending.png',
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const TrendingPage(),
+                        ),
+                      ),
+                      child: Text(
+                        'View all',
+                        style: bodySmallText(),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                ListView.builder(
+                  // padding: const EdgeInsets.all(8),
+                  shrinkWrap: true,
+                  primary: false,
+                  itemCount: newsCategories.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return InkWell(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ArticlePage(),
+                        ),
+                      ),
+                      child: Card(
+                        child: ListTile(
+                          leading: ClipRRect(
+                            clipBehavior: Clip.antiAlias,
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/teslanews.jpg',
+                              width: 80,
+                              height: 120,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          title: Text(
+                            'Tesla scraps low-cost car plans amid fierce Chinese EV competition',
+                            style: bodyText(
+                              textcolor: Colors.black,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                          subtitle: Row(
+                            children: [
+                              const Icon(
+                                Icons.watch_later_outlined,
+                                size: 14,
+                                color: Colors.black54,
+                              ),
+                              Text(
+                                '  4 hours',
+                                style: bodySmallText(
+                                  textcolor: Colors.black54,
+                                ),
+                              ),
+                            ],
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 10,
+                            color: Colors.black26,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  //   separatorBuilder: (BuildContext context, int index) =>
+                  //       const Divider(
+                  //     thickness: 2,
+                  //   ),
+                ),
               ],
             ),
           ),

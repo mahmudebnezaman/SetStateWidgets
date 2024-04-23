@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:landing_page_ui_setstate/loginpage.dart';
 import 'package:landing_page_ui_setstate/signuppage.dart';
+import 'package:landing_page_ui_setstate/utils/strings.dart';
 import 'package:landing_page_ui_setstate/widgets/widgets.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -36,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
                 Text(
-                  'Your digital portal to the world!!',
+                  firstText,
                   style: bodyLargeText(),
                 ),
                 const SizedBox(
@@ -62,12 +63,9 @@ class _SplashScreenState extends State<SplashScreen> {
                       Radius.circular(36.0),
                     ),
                   ),
-                  child: const Text(
-                    'Anytime Anywhere',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.black,
-                    ),
+                  child: Text(
+                    secondText,
+                    style:bodyHeaderText(),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -92,7 +90,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                     child: Text(
-                      'Log In',
+                      logIn,
                       style: bodyLargeText(textcolor: Colors.white),
                     ),
                   ),
@@ -109,7 +107,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                     child: Text(
-                      'Sign Up',
+                      signUp,
                       style: bodyLargeText(textcolor: Colors.black87),
                     ),
                   ),

@@ -1,8 +1,16 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:landing_page_ui_setstate/splashscreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) => const MyApp(),
+    // ),
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

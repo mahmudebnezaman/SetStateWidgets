@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:landing_page_ui_setstate/utils/strings.dart';
 import 'package:landing_page_ui_setstate/widgets/widgets.dart';
 
 Widget loginSignupBackground({required BuildContext context, required String title}){
@@ -9,7 +10,7 @@ Widget loginSignupBackground({required BuildContext context, required String tit
         height: MediaQuery.of(context).size.height * 0.3,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: title == 'Log In' ? Colors.greenAccent : Colors.lightBlueAccent,
+          color: title == logIn ? Colors.greenAccent : Colors.lightBlueAccent,
           borderRadius: const BorderRadius.only(
             bottomRight: Radius.circular(36.0),
             bottomLeft: Radius.circular(36.0),
@@ -65,7 +66,7 @@ Widget loginSignupBackground({required BuildContext context, required String tit
             Container(
               width: 40,
               height: 20,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.background,
             ),
             Text(
               'or',
