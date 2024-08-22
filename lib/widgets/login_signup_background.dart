@@ -66,7 +66,7 @@ Widget loginSignupBackground({required BuildContext context, required String tit
             Container(
               width: 40,
               height: 20,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.surface,
             ),
             Text(
               'or',

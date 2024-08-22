@@ -22,7 +22,7 @@ class TrendingPage extends StatelessWidget {
             shrinkWrap: true,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              return Trending(context);
+              return trending(context);
             },
           ),
         ],

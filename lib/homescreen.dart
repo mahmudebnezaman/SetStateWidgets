@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                     // padding: const EdgeInsets.all(8),
                     itemCount: newsCategories.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return NewsCard(context);
+                      return newsCard(context);
                     },
                   ),
                 ),
@@ -195,7 +195,7 @@ class HomeScreen extends StatelessWidget {
                     // padding: const EdgeInsets.all(8),
                     itemCount: newsCategories.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return RecommendedCard(context);
+                      return recommendedCard(context);
                     },
                   ),
                 ),

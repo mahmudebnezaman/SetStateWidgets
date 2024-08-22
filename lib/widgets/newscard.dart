@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:landing_page_ui_setstate/article.dart';
 import 'package:landing_page_ui_setstate/widgets/widgets.dart';
 
-Widget NewsCard(BuildContext context) {
+Widget newsCard(BuildContext context) {
   return InkWell(
     onTap: () => Navigator.of(context).push(
       MaterialPageRoute(
@@ -94,7 +94,7 @@ Widget NewsCard(BuildContext context) {
   );
 }
 
-Widget RecommendedCard(BuildContext context) {
+Widget recommendedCard(BuildContext context) {
   return InkWell(
     onTap: () => Navigator.of(context).push(
       MaterialPageRoute(
@@ -153,7 +153,7 @@ Widget RecommendedCard(BuildContext context) {
   );
 }
 
-Widget Trending(BuildContext context) {
+Widget trending(BuildContext context) {
   return InkWell(
     onTap: () => Navigator.of(context).push(
       MaterialPageRoute(
